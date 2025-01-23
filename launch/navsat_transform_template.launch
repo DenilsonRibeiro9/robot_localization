@@ -40,6 +40,8 @@
   <node pkg="robot_localization" type="navsat_transform_node" name="navsat_transform_node" clear_params="true">
     <rosparam command="load" file="$(find robot_localization)/params/navsat_transform_template.yaml" />
 
+      <remap from="imu/data" to="gps/imu"/>
+      <remap from="odometry/filtered" to="/novatel/oem7/odom"/>
       <!-- Placeholders for input remapping. Set your topic names as the "to" values.
       <remap from="imu/data" to=""/>
       <remap from="odometry/filtered" to=""/>
@@ -48,4 +50,3 @@
 
   </node>
 </launch>
-
